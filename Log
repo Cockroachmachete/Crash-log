@@ -1,0 +1,141 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  SpongeCoremod (spongeforge-1.12.2-2768-7.1.5.jar)
+  MicdoodlePlugin (MicdoodleCore-1.12.2-4.0.2.190.jar)
+Contact their authors BEFORE contacting forge
+
+// Would you like a cupcake?
+
+Time: 3/7/19 2:34 AM
+Description: Exception initializing level
+
+java.lang.NullPointerException: Exception initializing level
+	at com.flansmod.apocalypse.common.world.buildings.WorldGenSkeleton.func_180709_b(WorldGenSkeleton.java:24)
+	at com.flansmod.apocalypse.common.world.ChunkProviderApocalypse.func_185931_b(ChunkProviderApocalypse.java:388)
+	at org.spongepowered.mod.world.gen.SpongeChunkGeneratorForge.func_185931_b(SpongeChunkGeneratorForge.java:306)
+	at net.minecraft.world.chunk.Chunk.func_186034_a(Chunk.java:1019)
+	at net.minecraft.world.chunk.Chunk.func_186030_a(Chunk.java:999)
+	at net.minecraft.world.gen.ChunkProviderServer.func_186025_d(ChunkProviderServer.java:157)
+	at net.minecraft.world.World.func_72964_e(World.java:310)
+	at net.minecraft.world.World.func_175726_f(World.java:305)
+	at net.minecraft.world.WorldServer.func_180495_p(WorldServer.java:3261)
+	at net.minecraft.world.World.func_175623_d(World.java:230)
+	at net.minecraft.world.World.func_184141_c(World.java:210)
+	at com.flansmod.apocalypse.common.world.WorldProviderApocalypse.func_76566_a(WorldProviderApocalypse.java:44)
+	at net.minecraft.world.WorldServer.func_73052_b(WorldServer.java:944)
+	at net.minecraft.world.WorldServer.func_72963_a(WorldServer.java:866)
+	at org.spongepowered.common.world.WorldManager.createWorldFromProperties(WorldManager.java:807)
+	at org.spongepowered.common.world.WorldManager.loadAllWorlds(WorldManager.java:771)
+	at net.minecraft.server.MinecraftServer.func_71247_a(MinecraftServer.java:3545)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:270)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.flansmod.apocalypse.common.world.buildings.WorldGenSkeleton.func_180709_b(WorldGenSkeleton.java:24)
+	at com.flansmod.apocalypse.common.world.ChunkProviderApocalypse.func_185931_b(ChunkProviderApocalypse.java:388)
+	at org.spongepowered.mod.world.gen.SpongeChunkGeneratorForge.func_185931_b(SpongeChunkGeneratorForge.java:306)
+	at net.minecraft.world.chunk.Chunk.func_186034_a(Chunk.java:1019)
+	at net.minecraft.world.chunk.Chunk.func_186030_a(Chunk.java:999)
+	at net.minecraft.world.gen.ChunkProviderServer.func_186025_d(ChunkProviderServer.java:157)
+	at net.minecraft.world.World.func_72964_e(World.java:310)
+	at net.minecraft.world.World.func_175726_f(World.java:305)
+	at net.minecraft.world.WorldServer.func_180495_p(WorldServer.java:3261)
+	at net.minecraft.world.World.func_175623_d(World.java:230)
+	at net.minecraft.world.World.func_184141_c(World.java:210)
+	at com.flansmod.apocalypse.common.world.WorldProviderApocalypse.func_76566_a(WorldProviderApocalypse.java:44)
+	at net.minecraft.world.WorldServer.func_73052_b(WorldServer.java:944)
+
+-- Affected level --
+Details:
+	Level name: DIM2
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 361 Drop: 0
+	Level seed: 251791032
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (0,0,0), Chunk: (at 0,0,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 0 game time, 0 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+Stacktrace:
+	at net.minecraft.world.WorldServer.func_72963_a(WorldServer.java:866)
+	at org.spongepowered.common.world.WorldManager.createWorldFromProperties(WorldManager.java:807)
+
+-- Sponge PhaseTracker --
+Details:
+	Phase Stack: /*************************************************************************************************************/
+/*   - Phase: GenerationPhase{}{TerrainGenerationState:TERRAIN_GENERATION}                                   */
+/*     Context:                                                                                              */
+/*     - CapturedBlockPosition: CaptureBlockPos{pos=null, world=Optional.empty}                              */
+/*     - World: WorldServer{Name=DIM2, DimensionId=2, DimensionType=minecraft:overworld, DimensionTypeId=0}  */
+/*   - Phase: GenerationPhase{}{TerrainGenerationState:TERRAIN_GENERATION}                                   */
+/*     Context:                                                                                              */
+/*     - CapturedBlockPosition: CaptureBlockPos{pos=null, world=Optional.empty}                              */
+/*     - World: WorldServer{Name=DIM2, DimensionId=2, DimensionType=minecraft:overworld, DimensionTypeId=0}  */
+/*   - Phase: GenerationPhase{}{TerrainGenerationState:TERRAIN_GENERATION}                                   */
+/*     Context:                                                                                              */
+/*     - Source: WorldServer{Name=DIM2, DimensionId=2, DimensionType=minecraft:overworld, DimensionTypeId=0} */
+/*     - CapturedBlockPosition: CaptureBlockPos{pos=null, world=Optional.empty}                              */
+/*     - World: null                                                                                         */
+/*************************************************************************************************************/
+
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.handler$onCrashReport$zjm000(MinecraftServer.java:3973)
+	at net.minecraft.server.MinecraftServer.func_71230_b(MinecraftServer.java:889)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71230_b(DedicatedServer.java:371)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:554)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 4.15.0-38-generic
+	Java Version: 1.8.0_202, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2750484984 bytes (2623 MB) / 3951034368 bytes (3768 MB) up to 3951034368 bytes (3768 MB)
+	JVM Flags: 3 total; -Xmx4096M -Xms4096M -Xss2M
+	IntCache: cache: 0, tcache: 11, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2768 19 mods loaded, 19 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State   | ID                  | Version           | Source                                        | Signature                                |
+	|:------- |:------------------- |:----------------- |:--------------------------------------------- |:---------------------------------------- |
+	| UCHIJAA | minecraft           | 1.12.2            | minecraft.jar                                 | None                                     |
+	| UCHIJAA | mcp                 | 9.42              | minecraft.jar                                 | None                                     |
+	| UCHIJAA | FML                 | 8.0.99.99         | forge-1.12.2-14.23.5.2768-universal.jar       | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAA | forge               | 14.23.5.2768      | forge-1.12.2-14.23.5.2768-universal.jar       | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAA | micdoodlecore       |                   | minecraft.jar                                 | None                                     |
+	| UCHIJAA | spongeapi           | 7.1.0-366290f8    | spongeforge-1.12.2-2768-7.1.5.jar             | None                                     |
+	| UCHIJAA | sponge              | 1.12.2-7.1.5      | spongeforge-1.12.2-2768-7.1.5.jar             | None                                     |
+	| UCHIJAA | spongeforge         | 1.12.2-2768-7.1.5 | spongeforge-1.12.2-2768-7.1.5.jar             | None                                     |
+	| UCHIJAA | biomesoplenty       | 7.0.1.2425        | BiomesOPlenty-1.12.2-7.0.1.2425-universal.jar | None                                     |
+	| UCHIJAA | extrautils2         | 1.0               | Extra-Utilities-Mod-1.12.2.jar                | None                                     |
+	| UCHIJAA | factorytech         | 1.5               | FactoryTech-1.6.6b.jar                        | None                                     |
+	| UCHIJAA | flansmod            | 5.5.2             | Flan's Mod-1.12.2-5.5.2.jar                   | None                                     |
+	| UCHIJAA | flansmodapocalypse  | 1.0               | Flan's Mod-1.12.2-5.5.2.jar                   | None                                     |
+	| UCHIJAA | galacticraftcore    | 4.0.2.190         | GalacticraftCore-1.12.2-4.0.2.190.jar         | None                                     |
+	| UCHIJAA | galacticraftplanets | 4.0.2.190         | Galacticraft-Planets-1.12.2-4.0.2.190.jar     | None                                     |
+	| UCHIJAA | jei                 | 4.15.0.268        | jei_1.12.2-4.15.0.268.jar                     | None                                     |
+	| UCHIJAA | millenaire          | Millénaire 7.1.2  | millenaire-7.1.2.jar                          | None                                     |
+	| UCHIJAA | nucleus             | 1.9.1-S7.1        | Nucleus-1.9.1-S7.1-MC1.12.2-plugin.jar        | None                                     |
+	| UCHIJAA | roguelike           | 1.8.0             | RoguelikeDungeons-1.12.2-1.8.0.jar            | None                                     |
+
+	Loaded coremods (and transformers): 
+SpongeCoremod (spongeforge-1.12.2-2768-7.1.5.jar)
+  org.spongepowered.common.launch.transformer.SpongeSuperclassTransformer
+MicdoodlePlugin (MicdoodleCore-1.12.2-4.0.2.190.jar)
+  micdoodle8.mods.miccore.MicdoodleTransformer
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 48; []
+	Is Modded: Definitely; Server brand changed to 'fml,forge,sponge'
+	Type: Dedicated Server (map_server.txt)
